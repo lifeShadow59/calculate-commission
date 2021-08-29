@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+   <title>Practical Task</title>
+</head>
+
+<body>
+
+   <div class="container p-3 float-left">
+      <form>
+         <div class="row">
+            <div class="col">
+               <label>Minimum value</label>
+               <input type="number" class="form-control" placeholder="Minimum value" name="minValue" id="minValue" min="0">
+            </div>
+            <div class="col">
+               <label>Maximum value</label>
+               <input type="number" class="form-control" placeholder="Maximum value" name="maxValue" id="maxValue" min="0">
+            </div>
+            <div class="col">
+               <label>Commission value</label>
+               <input type="number" class="form-control" placeholder="$" name="comValue" id="comValue" min="0">
+            </div>
+            <div class="col pt-2">
+               <label></label>
+               <input type="button" class="form-control btn btn-primary" name="button" value="Add Button"
+                  onclick="AddRow()" id="btn">
+            </div>
+         </div>
+      </form>
+   </div>
+
+   <div class="container p-3 float-left">
+      <table class="table" id="show">
+         <thead>
+            <tr>
+               <th scope="col">Minimum Sale</th>
+               <th scope="col">Maximum Sale</th>
+               <th scope="col">Commission</th>
+            </tr>
+         </thead>
+      </table>
+   </div>
+
+   <div class="container p-3 float-left">
+      <form>
+         <div class="row">
+            <div class="col-6">
+               <label>Input Sales</label>
+               <input type="number" class="form-control" placeholder="Input Sales" name="inputSales" id="inputSales" min="0">
+            </div>
+            <div class="col-6 pt-2">
+               <label></label>
+               <!-- document.getElementById('inputSales').value -->
+               <input type="button" class="form-control btn btn-primary" name="button" value="Get Commission Button" onclick="calcCommissionAmt(150)">
+            </div>
+
+         </div>
+      </form>
+   </div>
+
+
+
+
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+   <!-- Show input Value in Table  -->
+   <script>
+      var minValue1 = [];
+      var maxValue2 = [];
+      var comValue3 = [];
+       minValue1 = [1,101,201,301,401,501];
+       maxValue2 = [100,200,300,400,500,600];
+       comValue3 = [5,15,20,25,30,35];
+      // var n = 1;
+      // var x = 0;
+      
+      function AddRow() {
+
+         var AddRow_n = document.getElementById('show');
+         var NewRow = AddRow_n.insertRow(n);
+
+         minValue1[x] = document.getElementById("minValue").value;
+         maxValue2[x] = document.getElementById("maxValue").value;
+         comValue3[x] = document.getElementById("comValue").value;
+
+         var cel1 = NewRow.insertCell(0);
+         var cel2 = NewRow.insertCell(1);
+         var cel3 = NewRow.insertCell(2);
+
+         cel1.innerHTML = minValue1[x];
+         cel2.innerHTML = maxValue2[x];
+         cel3.innerHTML = comValue3[x];
+
+         n++;
+         x++;
+      }
+
+      function calcCommissionAmt(inputSales) {
+
+         let commissionAmt = 0;
+         
+         // for (let i = 1; i <= inputSales; i++) {
+         //    if (i >= minValue1[0] && i <= maxValue2[0]) { commissionAmt += comValue3[0] }
+         //    else if (i >= minValue1[1] && i <= maxValue2[1]) { commissionAmt += comValue3[1] }
+         //    else if (i >= minValue1[2] && i <= maxValue2[2]) { commissionAmt += comValue3[2] }
+         //    else if (i >= minValue1[3] && i <= maxValue2[3]) { commissionAmt += comValue3[3] }
+         // }
+         console.log(commissionAmt);
+         // return commissionAmt; 
+      }
+      
+   </script>
+</body>
+
+</html>
